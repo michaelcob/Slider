@@ -9,9 +9,14 @@ $(document).ready( function () {
 
 
 function startSlider() {
-	count = $("#slider>Img").length();
+	count = $("#slider>Img").length;
 	
 	loop = setInterval(function() {
+	
+	if(sliderNext>count){
+		sliderNext = 1;
+		sliderInt=1;
+	}
 	
 	$("#slider>Img").fadeOut(300);
 	$("#slider>Img#"+sliderNext).fadeIn(300);
